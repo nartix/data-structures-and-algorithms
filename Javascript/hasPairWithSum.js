@@ -16,11 +16,10 @@ function hasPairWithSum2(arr, sum) {
   const len = arr.length;
   for (let i = 0; i < len; i++) {
     if (mySet.has(arr[i])) {
-      // return true;
+      return true;
     }
     mySet.add(sum - arr[i]);
   }
-  console.log([...mySet]);
   return false;
 }
 
