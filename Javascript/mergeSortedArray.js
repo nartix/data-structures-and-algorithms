@@ -4,13 +4,13 @@
 // stop if first item of second array is small than current item of first array.
 
 function mergeSortedArrays(array1, array2) {
-  if (!Array.isArray(array1) || !Array.isArray(array2)) {
+  if (!Array.isArray(array1) && !Array.isArray(array2)) {
     return [];
   }
-  if (array1.length === 0) {
+  if (array1.length === 0 || !Array.isArray(array1)) {
     return array2;
   }
-  if (array2.length === 0) {
+  if (array2.length === 0 || !Array.isArray(array2)) {
     return array1;
   }
 
