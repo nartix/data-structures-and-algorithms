@@ -16,7 +16,7 @@ class LinkedList {
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
-    return this;
+    return this.printList();
   }
 
   prepend(value) {
@@ -24,7 +24,7 @@ class LinkedList {
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
-    return this;
+    return this.printList();
   }
 
   printList() {
@@ -35,7 +35,7 @@ class LinkedList {
       array.push(currentNode.value);
       currentNode = currentNode.next;
     }
-    return array;
+    console.log(array);
   }
 
   insert(index, value) {
@@ -101,6 +101,7 @@ class LinkedList {
     //  \  /
     //   99
     this.length++;
+    return this.printList();
   }
 
   traverseToIndex(index) {
@@ -129,7 +130,7 @@ class LinkedList {
       const nextNode = this.head.next;
       this.head = nextNode;
       this.length--;
-      return this;
+      return this.printList;
     }
 
     index = index >= this.length ? this.length - 1 : index;
@@ -143,7 +144,7 @@ class LinkedList {
       headNode.next = deleteNode.next;
     }
     this.length--;
-    return this;
+    return this.printList();
   }
 }
 
@@ -155,4 +156,4 @@ myLinkedList.insert2(7, 99);
 myLinkedList.remove(5);
 
 console.log(myLinkedList);
-console.log(myLinkedList.printList());
+// console.log(myLinkedList.printList());
