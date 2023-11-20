@@ -36,6 +36,7 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     console.log(array);
+    return array;
   }
 
   insert(index, value) {
@@ -115,10 +116,7 @@ class LinkedList {
   }
 
   isIndexValid(index) {
-    if (index < 0 || typeof index !== 'number') {
-      return false;
-    }
-    return true;
+    return index > 0 || typeof index === 'number';
   }
 
   remove(index) {
@@ -146,6 +144,23 @@ class LinkedList {
     this.length--;
     return this.printList();
   }
+  reverse() {
+    // !this.head.next does the same
+    if (this.length === 1) {
+      return this.head;
+    }
+    const values = this.printList();
+    this.head.next = null;
+    this.head = new Node(values[0]);
+    this.tail = this.head;
+    const length = this.length;
+    this.length = 1;
+
+    for (let i = 1; i < length; i++) {
+      this.prepend(values[i]);
+    }
+    this.printList();
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -154,6 +169,6 @@ myLinkedList.append(15);
 myLinkedList.prepend(3);
 myLinkedList.insert2(7, 99);
 myLinkedList.remove(5);
-
+myLinkedList.reverse();
 console.log(myLinkedList);
 // console.log(myLinkedList.printList());

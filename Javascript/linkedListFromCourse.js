@@ -1,5 +1,3 @@
-// add a method remove() to the linked list that deletes a node to the specified index.
-
 class LinkedList {
   constructor(value) {
     this.head = {
@@ -14,6 +12,7 @@ class LinkedList {
       value: value,
       next: null,
     };
+    console.log(newNode);
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
@@ -74,12 +73,34 @@ class LinkedList {
     this.length--;
     return this.printList();
   }
+  reverse() {
+    if (!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+
+    this.head.next = null;
+    this.head = first;
+    return this.printList();
+  }
 }
 
 let myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
 myLinkedList.prepend(1);
+myLinkedList.printList();
 myLinkedList.insert(2, 99);
 myLinkedList.insert(20, 88);
+myLinkedList.printList();
 myLinkedList.remove(2);
+myLinkedList.reverse();

@@ -84,6 +84,8 @@ class DoublyLinkedList {
       return this;
     }
 
+    index = index >= this.length ? this.length - 1 : index;
+
     const leaderNode = this.traverseToIndex(index - 1);
     // 3  x 5x -> 15/null
     //   \
