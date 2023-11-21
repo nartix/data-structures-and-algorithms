@@ -161,6 +161,39 @@ class LinkedList {
     }
     this.printList();
   }
+  reverse2() {
+    // 1 2 3 4
+    // <-2
+    // 2 1 3 4
+    // <---3
+    // move 3 to 2
+    // 2 next to 3 next;
+    // 3 2 1 4
+    // <-----4
+    // 4 3 2 1
+
+    // val1 nex2
+    // val2 nex3
+    //
+
+    if (!this.head || !this.head.next) {
+      return this.head;
+    }
+
+    let prev = null;
+    let current = this.head;
+    this.tail = this.head; // The current head will become the new tail
+    // 1 2 3 4
+    while (current !== null) {
+      let next = current.next; // Store next node
+      current.next = prev; // Reverse the pointer
+      prev = current; // Move prev forward
+      current = next; // Move current forward
+    }
+
+    this.head = prev; // Set new head
+    return this.printList(); // Print and return the reversed list
+  }
 }
 
 const myLinkedList = new LinkedList(10);
@@ -169,6 +202,7 @@ myLinkedList.append(15);
 myLinkedList.prepend(3);
 myLinkedList.insert2(7, 99);
 myLinkedList.remove(5);
-myLinkedList.reverse();
+// myLinkedList.reverse();
+myLinkedList.reverse2();
 console.log(myLinkedList);
 // console.log(myLinkedList.printList());
