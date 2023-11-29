@@ -193,6 +193,55 @@ class LinkedList {
 
     this.head = prev; // Set new head
     return this.printList(); // Print and return the reversed list
+
+    // Start: 3 -> 10 -> 5 -> 15 -> 99
+    // Now, let's go through the reverse2() method step by step:
+
+    // Initial State:
+    // prev: null
+    // current: 3 (head of the list)
+    // this.tail: 3 (since the head will become the new tail)
+    // Iteration 1:
+    // next: 10 (next node after current)
+    // current.next: null (reversing the pointer)
+    // Update prev to current (3)
+    // Move current to next (10)
+    // List now: null <- 3 10 -> 5 -> 15 -> 99
+
+    // Iteration 2:
+    // next: 5
+    // current.next: 3
+    // Update prev to current (10)
+    // Move current to next (5)
+    // List now: null <- 3 <- 10 5 -> 15 -> 99
+
+    // Iteration 3:
+    // next: 15
+    // current.next: 10
+    // Update prev to current (5)
+    // Move current to next (15)
+    // List now: null <- 3 <- 10 <- 5 15 -> 99
+
+    // Iteration 4:
+    // next: 99
+    // current.next: 5
+    // Update prev to current (15)
+    // Move current to next (99)
+    // List now: null <- 3 <- 10 <- 5 <- 15 99
+
+    // Iteration 5:
+    // next: null (end of the list)
+    // current.next: 15
+    // Update prev to current (99)
+    // current becomes null (end of the loop)
+    // List now: null <- 3 <- 10 <- 5 <- 15 <- 99
+
+    // Final State:
+    // this.head: 99
+    // this.tail: 3 (set at the beginning)
+    // Final Reversed List: 99 -> 15 -> 5 -> 10 -> 3
+
+    // So, after reverse2() is executed, the linked list is reversed, and the nodes are in the order 99 -> 15 -> 5 -> 10 -> 3.
   }
 }
 
