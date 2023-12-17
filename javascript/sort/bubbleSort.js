@@ -10,7 +10,6 @@ function bubbleSort(array) {
       }
     }
   }
-  return array;
 }
-
-console.log(bubbleSort(numbers));
+bubbleSort(numbers);
+console.log(numbers);
