@@ -21,4 +21,4 @@ Quick sort if decimal places
 Quick sort
 
 //#8 - You want to teach sorting
-Bubble sort
+Bubble sort, Selecion sort
