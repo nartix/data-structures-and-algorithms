@@ -18,12 +18,14 @@ class BinarySearchTree {
       let currentNode = this.root;
       while (true) {
         if (value > currentNode.value) {
+          //right
           if (currentNode.right === null) {
             currentNode.right = newNode;
             return this;
           }
           currentNode = currentNode.right;
         } else {
+          //left
           if (!currentNode.left) {
             currentNode.left = newNode;
             return this;
