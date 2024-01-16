@@ -61,9 +61,6 @@ function traverseNode(node) {
   let vals = [];
   let currentNode = node;
   while (currentNode !== null) {
-    // if (currentNode.next === null) {
-    //   return this;
-    // }
     vals.push(currentNode.val);
     currentNode = currentNode.next;
   }
