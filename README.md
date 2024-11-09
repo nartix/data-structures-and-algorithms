@@ -82,4 +82,3 @@ This document outlines the data structures and algorithms I've learned, organize
 - wd.py - Python script for word decoding.
 - worddecode.py - First approach to word decoding.
 - worddecode2.py - Second approach to word decoding.
-- README.md - Documentation for the Python project.
